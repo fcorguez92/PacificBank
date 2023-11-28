@@ -42,7 +42,7 @@ CREATE TABLE Transacciones (
 -- Insertar Usuarios
 INSERT INTO Usuarios (ID, Username, Password, UserType)
 VALUES
-    (1, 'admin', '1234', 'Administrador'),
+    (1, 'admin', 'admin1234', 'Administrador'),
     (2, 'usuario1', '6985', 'Normal'),
     (3, 'usuario2', 'antinomia', 'Normal'),
     (4, 'usuario3', 'zonya', 'Normal'),

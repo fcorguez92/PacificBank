@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Inicio de sesión exitoso
             session_start();
             $_SESSION["username"] = $username;
-            header("Location: welcome.php"); // Redirigir a la página de bienvenida
+            header("Location: view/blocks/welcome.php"); // Redirigir a la página de bienvenida
             exit();
         } else {
             // Credenciales incorrectas
