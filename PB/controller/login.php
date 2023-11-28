@@ -9,12 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username) || empty($password)) {
         echo "Por favor, completa todos los campos.";
     } else {
-        // Aquí puedes realizar la autenticación, por ejemplo, consultando una base de datos
-        // En este ejemplo, se compara el usuario y la contraseña con valores fijos
-        $user = "usuario";
-        $pass = "contrasena";
+        // Incluir el archivo de conexión a la base de datos
+        include_once __DIR__ . "/../model/conexion.php";
+        // Consultar la base de datos para encontrar al usuario
+        $sql = "SELECT * FROM usuarios WHERE username = '$username' AND password = '$password'";
+        $result = $conn->query($sql);
 
-        if ($username === $user && $password === $pass) {
+        if ($result->num_rows > 0) {
             // Inicio de sesión exitoso
             session_start();
             $_SESSION["username"] = $username;

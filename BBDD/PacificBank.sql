@@ -42,11 +42,11 @@ CREATE TABLE Transacciones (
 -- Insertar Usuarios
 INSERT INTO Usuarios (ID, Username, Password, UserType)
 VALUES
-    (1, 'admin', 'hashed_admin_password', 'Administrador'),
-    (2, 'usuario1', 'hashed_user_password1', 'Normal'),
-    (3, 'usuario2', 'hashed_user_password2', 'Normal'),
-    (4, 'usuario3', 'hashed_user_password3', 'Normal'),
-    (5, 'usuario4', 'hashed_user_password4', 'Normal');
+    (1, 'admin', '1234', 'Administrador'),
+    (2, 'usuario1', '6985', 'Normal'),
+    (3, 'usuario2', 'antinomia', 'Normal'),
+    (4, 'usuario3', 'zonya', 'Normal'),
+    (5, 'usuario4', 'tlaxalteco', 'Normal');
 
 -- Insertar Cuentas asociadas a los Usuarios
 INSERT INTO Cuentas (ID, UsuarioID, IBAN, Saldo)
