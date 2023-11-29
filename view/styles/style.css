@@ -1,0 +1,64 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 10px;
+}
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+
+.input-group {
+  position: relative;
+}
+.input-group #togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: 1px solid #ced4da;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.25);
+  font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.btn-primary:hover {
+  background-color: #0062cc;
+}
+
+footer {
+  background-color: #6c757d;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.bi-eye, .bi-eye-slash {
+  font-size: 1.2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
