@@ -1,0 +1,58 @@
+2023-11-10 11:36:02 error: [Cake\Http\Exception\MissingControllerException] Controller class `Usuarios` could not be found. in C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 308
+Exception Attributes: array (
+  'controller' => 'Usuarios',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:74
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\BaseApplication.php:330
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:169
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:118
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:69
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:115
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Server.php:103
+- C:\xampp\htdocs\PacificBank\PacificBank\webroot\index.php:37
+- [main]:
+
+Request URL: /usuarios
+2023-11-13 09:39:53 error: [Cake\Http\Exception\MissingControllerException] Controller class `Barcos` could not be found. in C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php on line 308
+Exception Attributes: array (
+  'controller' => 'Barcos',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Controller\ControllerFactory.php:74
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\BaseApplication.php:330
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:86
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Middleware\CsrfProtectionMiddleware.php:169
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Middleware\BodyParserMiddleware.php:157
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php:118
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php:69
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php:115
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php:60
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:82
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Runner.php:67
+- C:\xampp\htdocs\PacificBank\PacificBank\vendor\cakephp\cakephp\src\Http\Server.php:103
+- C:\xampp\htdocs\PacificBank\PacificBank\webroot\index.php:37
+- [main]:
+
+Request URL: /barcos
