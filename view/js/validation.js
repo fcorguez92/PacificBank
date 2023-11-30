@@ -1,9 +1,9 @@
 function validarFormulario() {
   // Obtener los valores de los campos
-  var username = document.getElementById("username").value.trim();
-  var email = document.getElementById("email").value.trim();
-  var password = document.getElementById("password").value.trim();
-  var confirmPassword = document.getElementById("confirmPassword").value.trim();
+  let username = document.getElementById("username").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let password = document.getElementById("password").value.trim();
+  let confirmPassword = document.getElementById("confirmPassword").value.trim();
 
   // Limpiar errores
   document.getElementById("usernameError").innerHTML = "";
@@ -22,7 +22,7 @@ function validarFormulario() {
   }
 
   // Validar formato de correo electrónico
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     document.getElementById("email").classList.add("is-invalid");
     document.getElementById("emailError").innerHTML =
