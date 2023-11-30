@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Incluir el archivo de conexión a la base de datos
         include_once __DIR__ . "/../model/conexion.php";
         // Consultar la base de datos para encontrar al usuario
-        $sql = "SELECT * FROM usuarios WHERE username = '$username' AND password = '$password'";
+        $sql = "SELECT * FROM usuarios WHERE username = '$username' AND pass = '$password'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
