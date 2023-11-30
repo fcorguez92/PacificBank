@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             // Credenciales incorrectas
-            echo "Usuario o contraseña incorrectos.";
+            header("/PacificBank");
         }
     }
 }

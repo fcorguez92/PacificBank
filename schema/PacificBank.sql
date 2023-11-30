@@ -7,7 +7,8 @@ use pacificbank;
 CREATE TABLE Usuarios (
     ID INT PRIMARY KEY,
     Username VARCHAR(255) NOT NULL,
-    Password VARCHAR(255) NOT NULL,
+    Pass VARCHAR(255) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
     UserType ENUM('Normal', 'Administrador') DEFAULT 'Normal'
 );
 
@@ -40,13 +41,13 @@ CREATE TABLE Transacciones (
 );
 
 -- Insertar Usuarios
-INSERT INTO Usuarios (ID, Username, Password, UserType)
+INSERT INTO Usuarios (ID, Username, Pass, Email, UserType)
 VALUES
-    (1, 'admin', 'Admin1234', 'Administrador'),
-	(2, 'usuario1', '6985', 'Normal'),
-    (3, 'usuario2', 'antinomia', 'Normal'),
-    (4, 'usuario3', 'zonya', 'Normal'),
-    (5, 'usuario4', 'tlaxalteco', 'Normal');
+    (1, 'admin', 'Admin1234','admin@admin.admin' , 'Administrador'),
+	(2, 'usuario1', '6985','aa@bb.com' , 'Normal'),
+    (3, 'usuario2', 'antinomia','bb@aa.com' , 'Normal'),
+    (4, 'usuario3', 'zonya','cc@dd.com' , 'Normal'),
+    (5, 'usuario4', 'tlaxalteco','dd@cc.com' , 'Normal');
 
 -- Insertar Cuentas asociadas a los Usuarios
 INSERT INTO Cuentas (ID, UsuarioID, IBAN, Saldo)
