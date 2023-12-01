@@ -75,5 +75,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-
-<!-- A continuación, puedes incorporar este bloque de código en tu formulario HTML -->
