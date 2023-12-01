@@ -8,14 +8,14 @@ include_once("../../controller/register.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Formulario de Registro</title>
+    <title>Registro/PacificBank</title>
     <!-- Bootstrap CSS v5.3.2 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body class="bg-light">
     <div class="container mt-5">
-        <div class="row justify-content-center">
+        <div class="row vh-100 justify-content-center align-items-center">
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -46,7 +46,10 @@ include_once("../../controller/register.php");
                                 <div id="confirmPasswordError" class="invalid-feedback"></div>
                             </div>
 
-                            <button type="button" onclick="validarFormulario()" class="btn btn-primary w-100">Registrar</button>
+                            <div class="d-grid gap-2">
+                                <button type="button" onclick="validarFormulario()" class="btn btn-primary">Registrarme</button>
+                                <button type="button" onclick="window.history.back()" class="btn btn-secondary mt-2">Ya tengo cuenta</button>
+                            </div>
                         </form>
                     </div>
                 </div>

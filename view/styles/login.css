@@ -1,0 +1,18 @@
+#togglePassword {
+    cursor: pointer;
+    background-color: #fff; /* Color de fondo */
+    border: 1px solid #ccc; /* Borde del botón */
+    padding: 6px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none; /* Elimina el contorno predeterminado en algunos navegadores */
+}
+
+/* Cambia el color del cursor cuando pasa sobre el botón */
+#togglePassword:hover {
+    background-color: red;
+}
+
+/* Cambia el color del cursor cuando hace clic en el botón */
+#togglePassword:active {
+    background-color: blue;
+}
