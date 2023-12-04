@@ -21,7 +21,7 @@ include_once("../../controller/register.php");
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Registro</h2>
 
-                        <form id="registroForm">
+                        <form id="registroForm" method="POST" action="../../controller/register.php">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Nombre de usuario:</label>
                                 <input type="text" class="form-control" id="username" name="username" required>
@@ -47,8 +47,8 @@ include_once("../../controller/register.php");
                             </div>
 
                             <div class="d-grid gap-2">
-                                <button type="button" onclick="validarFormulario()" class="btn btn-primary">Registrarme</button>
-                                <button type="button" onclick="window.history.back()" class="btn btn-secondary mt-2">Ya tengo cuenta</button>
+                                <button type="submit"  class="btn btn-primary" >Registrarme</button>
+                                <button type="button"  class="btn btn-secondary mt-2" url="../../index.php">Ya tengo cuenta</button>
                             </div>
                         </form>
                     </div>
