@@ -62,14 +62,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Ejecutar la declaración
             if ($stmt->execute()) {
                 // Redirigir a la página de inicio de sesión después del registro exitoso
-                header("location: login.php");
                 echo 3;
             } else {
                 echo "Algo salió mal. Por favor, inténtelo de nuevo más tarde.";
             }
-
+            
             // Cerrar la declaración
             $stmt->close();
+            
+            header("location: /PacificBank");
         }
     }
 

@@ -5,18 +5,18 @@ create database pacificbank;
 use pacificbank;
 
 CREATE TABLE Usuarios (
-    ID INT PRIMARY KEY,
+    ID INT PRIMARY KEY AUTO_INCREMENT,
     Username VARCHAR(255) NOT NULL,
     Pass VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
     UserType ENUM('Normal', 'Administrador') DEFAULT 'Normal'
 );
 
-CREATE TABLE Cuentas (
+CREATE TABLE CueNtas (
     ID INT PRIMARY KEY,
     UsuarioID INT,
-    IBAN VARCHAR(30) NOT NULL,
-    Saldo DECIMAL(10,2) DEFAULT 0.00,
+    IBAN VARChAR(30) NOT NULL,
+    SalDo DECIMAL(10,2) DEFAULT 0.00,
     FOREIGN KEY (UsuarioID) REFERENCES Usuarios(ID)
 );
 
@@ -41,13 +41,13 @@ CREATE TABLE Transacciones (
 );
 
 -- Insertar Usuarios
-INSERT INTO Usuarios (ID, Username, Pass, Email, UserType)
+INSERT INTO Usuarios (Username, Pass, Email, UserType)
 VALUES
-    (1, 'admin', 'Admin1234','admin@admin.admin' , 'Administrador'),
-	(2, 'usuario1', '6985','aa@bb.com' , 'Normal'),
-    (3, 'usuario2', 'antinomia','bb@aa.com' , 'Normal'),
-    (4, 'usuario3', 'zonya','cc@dd.com' , 'Normal'),
-    (5, 'usuario4', 'tlaxalteco','dd@cc.com' , 'Normal');
+    ('admin', 'Admin1234','admin@admin.admin' , 'Administrador'),
+	('usuario1', '6985','aa@bb.com' , 'Normal'),
+    ('usuario2', 'antinomia','bb@aa.com' , 'Normal'),
+    ('usuario3', 'zonya','cc@dd.com' , 'Normal'),
+    ('usuario4', 'tlaxalteco','dd@cc.com' , 'Normal');
 
 -- Insertar Cuentas asociadas a los Usuarios
 INSERT INTO Cuentas (ID, UsuarioID, IBAN, Saldo)
