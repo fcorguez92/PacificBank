@@ -4,7 +4,7 @@
                     <a href="https://jbfarrow.com">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
-                           Community Dashboard
+                           Página Principal
                         </span>
                     </a>
                   
@@ -13,7 +13,7 @@
                     <a href="#">
                         <i class="fa fa-globe fa-2x"></i>
                         <span class="nav-text">
-                            Global Surveyors
+                            Posición Global
                         </span>
                     </a>
                     
@@ -22,7 +22,7 @@
                     <a href="#">
                        <i class="fa fa-comments fa-2x"></i>
                         <span class="nav-text">
-                            Group Hub Forums
+                            Soporte técnico
                         </span>
                     </a>
                     
@@ -31,7 +31,7 @@
                     <a href="#">
                        <i class="fa fa-camera-retro fa-2x"></i>
                         <span class="nav-text">
-                            Survey Photos
+                            Mi perfil
                         </span>
                     </a>
                    
@@ -56,7 +56,7 @@
                    <a href="#">
                        <i class="fa fa-cogs fa-2x"></i>
                         <span class="nav-text">
-                            Tools & Resources
+                            Configuración
                         </span>
                     </a>
                 </li>
@@ -64,7 +64,7 @@
                    <a href="#">
                         <i class="fa fa-map-marker fa-2x"></i>
                         <span class="nav-text">
-                            Member Map
+                            Localización
                         </span>
                     </a>
                 </li>
@@ -72,7 +72,7 @@
                     <a href="#">
                        <i class="fa fa-info fa-2x"></i>
                         <span class="nav-text">
-                            Documentation
+                            Acerca de nosotros
                         </span>
                     </a>
                 </li>

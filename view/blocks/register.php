@@ -48,7 +48,7 @@ include_once("../../controller/register.php");
 
                             <div class="d-grid gap-2">
                                 <button type="submit"  class="btn btn-primary" >Registrarme</button>
-                                <button type="button"  class="btn btn-secondary mt-2" onclick="window.location.href='../../index.php'">Ya tengo cuenta</button>
+                                <button type="button"  class="btn btn-secondary mt-2" onclick="window.location.href='/PacificBank'">Ya tengo cuenta</button>
                             </div>
                         </form>
                     </div>

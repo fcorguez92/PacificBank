@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    
+
     <?php include_once("sidebar.php"); ?>
 
     <header>
