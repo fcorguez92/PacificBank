@@ -1,6 +1,4 @@
 <?php
-// Incluir el archivo de conexión a la base de datos
-include_once(__DIR__ . '/../model/conexion.php');
 
 // Definir variables para almacenar los mensajes de error
 $username_err = $password_err = $confirm_password_err = $email_err = "";
@@ -63,6 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($stmt->execute()) {
                 // Redirigir a la página de inicio de sesión después del registro exitoso
                 echo 3;
+                echo '<script language="javascript">Registro exitoso("juas");</script>';
+                header("location: index.php");
             } else {
                 echo "Algo salió mal. Por favor, inténtelo de nuevo más tarde.";
             }
@@ -75,6 +75,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Cerrar la conexión a la base de datos
-    $conn->close();
+    
 }
 ?>

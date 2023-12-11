@@ -1,4 +1,5 @@
 <?php
+include_once("../../model/conexion.php");
 include_once("../../controller/register.php");
 ?>
 
