@@ -18,9 +18,6 @@ if (isset($_SESSION['username'])) {
         date_default_timezone_set('UTC');
         $fecha = date('d  F o');
 
-        // Imprimir el mensaje de bienvenida
-        echo "weeeee  "."Bienvenido $nombreUsuario, hoy es $diaSemana $fecha.";
-
         // Cerrar la conexión
         $conn->close();
     } else {

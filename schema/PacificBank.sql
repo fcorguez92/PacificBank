@@ -9,7 +9,8 @@ CREATE TABLE Usuarios (
     Username VARCHAR(255) NOT NULL,
     Pass VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
-    UserType ENUM('Normal', 'Administrador') DEFAULT 'Normal'
+    UserType ENUM('Normal', 'Administrador') DEFAULT 'Normal',
+    ImagenPerfil VARCHAR(255)
 );
 
 -- Crear la tabla Cuentas con ID AUTO_INCREMENT
