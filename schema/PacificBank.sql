@@ -10,7 +10,8 @@ CREATE TABLE Usuarios (
     Pass VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
     UserType ENUM('Normal', 'Administrador') DEFAULT 'Normal',
-    ImagenPerfil VARCHAR(255)
+    ImagenPerfil VARCHAR(255),
+    Moneda VARCHAR(3) DEFAULT 'EUR'
 );
 
 -- Crear la tabla Cuentas con ID AUTO_INCREMENT
@@ -18,7 +19,7 @@ CREATE TABLE Cuentas (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     UsuarioID INT,
     IBAN VARChAR(30) NOT NULL,
-    SalDo DECIMAL(10,2) DEFAULT 0.00,
+    Saldo DECIMAL(10,2) DEFAULT 0.00,
     FOREIGN KEY (UsuarioID) REFERENCES Usuarios(ID)
 );
 

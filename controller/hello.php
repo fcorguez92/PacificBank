@@ -15,11 +15,22 @@ if (isset($_SESSION['username'])) {
         $row = $result->fetch_assoc();
         $nombreUsuario = strtoupper($row["Username"]);
         $diaSemana = date('l');
-        date_default_timezone_set('UTC');
-        $fecha = date('d  F o');
 
-        // Cerrar la conexión
-        $conn->close();
+        // Establecer la configuración regional a español
+        setlocale(LC_TIME, 'es_ES.UTF-8');
+
+        // Configurar el objeto DateTime con la zona horaria adecuada
+        date_default_timezone_set('Europe/Paris');
+        $dateTimeObj = new DateTime('now', new DateTimeZone('Europe/Paris'));
+
+        // Formatear la fecha según tus preferencias
+        $dateFormatted = IntlDateFormatter::formatObject(
+            $dateTimeObj,
+            'd MMMM y',
+            'es'
+        );
+
+       
     } else {
         echo "Usuario no encontrado";
     }

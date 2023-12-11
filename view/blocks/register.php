@@ -22,7 +22,7 @@ include_once("../../controller/register.php");
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Registro</h2>
 
-                        <form id="registroForm" method="POST" action="../../controller/register.php">
+                        <form id="registroForm" method="POST" action="/PacificBank">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Nombre de usuario:</label>
                                 <input type="text" class="form-control" id="username" name="username" required>
