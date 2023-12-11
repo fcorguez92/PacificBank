@@ -22,8 +22,8 @@
         ?>
         <div class="container">
             <div class="message">
-                <h1>Bienvenido <?php echo $nombreUsuario; ?>,</h1>
-                <p>Hoy es <?php echo $diaSemana . ' ' . $fecha; ?>.</p>
+                <h1>Bienvenido <?php echo $nombreUsuario; ?></h1>
+                <p>Hoy es <?php echo $dateFormatted; ?>.</p>
             </div>
         </div>
 

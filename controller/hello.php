@@ -26,9 +26,10 @@ if (isset($_SESSION['username'])) {
         // Formatear la fecha según tus preferencias
         $dateFormatted = IntlDateFormatter::formatObject(
             $dateTimeObj,
-            'd MMMM y',
+            'd \'de\' MMMM y',
             'es'
         );
+        
 
        
     } else {
