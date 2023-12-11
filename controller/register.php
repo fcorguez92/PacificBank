@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Preparar la declaración de inserción
         $sql = "INSERT INTO Usuarios (Username, Pass, Email) VALUES (?, ?, ?)";
-        echo 1;
+        
         if ($stmt = $conn->prepare($sql)) {
 
             // Enlazar variables a la declaración preparada como parámetros
@@ -55,22 +55,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Hashear la contraseña
             $param_email = $email;
-            echo 2;
+           
 
             // Ejecutar la declaración
             if ($stmt->execute()) {
                 // Redirigir a la página de inicio de sesión después del registro exitoso
-                echo 3;
+              
                 echo '<script language="javascript">Registro exitoso("juas");</script>';
-                header("location: index.php");
+                header("location: /pacificbank/index.php");
             } else {
                 echo "Algo salió mal. Por favor, inténtelo de nuevo más tarde.";
             }
             
             // Cerrar la declaración
-            $stmt->close();
             
-            header("location: /PacificBank");
+            $stmt->close();
+            // header("location: /PacificBank");
         }
     }
 
