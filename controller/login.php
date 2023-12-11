@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($tipoUsuario == "Administrador") {
                 header("Location: view/blocks/welcome_admin.php");
             } else {
-                header("Location: view/blocks/welcome_client.php");
+                header("Location: view/blocks/welcome_user.php");
             }
             exit();
         } else {

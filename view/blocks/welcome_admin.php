@@ -1,13 +1,14 @@
+<?php include_once("/xampp/htdocs/PacificBank/model/conexion.php"); ?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <title>Bienvenido/PacificBank</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../styles/sidebar.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="../styles/sidebar.css" rel="stylesheet">
 
 </head>
 
@@ -19,7 +20,9 @@
 
     </header>
     <main>
-
+    <?php
+    include_once("../../controller/hello.php");
+    ?>
     </main>
     <footer>
 
