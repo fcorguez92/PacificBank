@@ -19,10 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Inicio de sesión exitoso
             $row = $result->fetch_assoc();
             $tipoUsuario = $row["UserType"];
+            $usuarioID = $row["id"];
+            $userIban = $row["iban"];
 
             session_start();
             $_SESSION["username"] = $username;
             $_SESSION["tipoUsuario"] = $tipoUsuario;
+            $_SESSION["usuarioID"] = $usuarioID;              
+            $_SESSION["userIban"] = $userIban;          
 
             if ($tipoUsuario == "Administrador") {
                 header("Location: view/blocks/welcome_admin.php");

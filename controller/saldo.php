@@ -1,4 +1,6 @@
 <?php
+
+
 function obtenerSaldoConvertido($conn, $username) {
     $result = array();
 

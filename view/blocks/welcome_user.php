@@ -1,5 +1,9 @@
-<?php include_once("/xampp/htdocs/PacificBank/model/conexion.php"); 
-include_once("/xampp/htdocs/PacificBank/controller/prestamo.php")?>
+<?php
+include_once("/xampp/htdocs/PacificBank/model/conexion.php");
+include_once("/xampp/htdocs/PacificBank/controller/prestamo.php");
+include_once("../../controller/saldo.php");
+include_once("../../controller/hello.php");
+?>
 <!doctype html>
 <html lang="es">
 
@@ -21,70 +25,22 @@ include_once("/xampp/htdocs/PacificBank/controller/prestamo.php")?>
 
     <header>
         <?php
-        include_once("../../controller/hello.php");
+
         include_once("../../controller/img.php");
-        include_once("../../controller/saldo.php");
+
         $result = obtenerSaldoConvertido($conn, $nombreUsuario);
         ?>
         <div class="container">
-            <div class="message">
-                <h1>Bienvenido <?php echo $nombreUsuario; ?>,</h1>
-                <p>Hoy es <?php echo $dateFormatted; ?>.</p>
-                <?php
-                // Verificar si hay errores antes de mostrar el saldo
-                if (isset($result['error']) && !empty($result['error'])) {
-                    echo '<p>Error al obtener el saldo: ' . $result['error'] . '</p>';
-                } else {
-                    // Mostrar el saldo solo si no hay errores
-                    $saldoConvertido = $result['saldoConvertido'];
-                    $moneda = $result['moneda'];
-                    echo '<p>Tu saldo actual es de: ' . $saldoConvertido . ' ' . $moneda . '</p>';
-                }
-                ?>
+            <?php include_once("hello.php") ?>
 
-                <!--Formulario de movimientos-->
-                <form action="" method="post">
-                    <?php
-                    // Llamar a la función para manejar operaciones de saldo
-                    $resultOperacion = manejarOperacionSaldo($conn, $nombreUsuario);
-
-                    // Mostrar mensajes de error o éxito después de la operación
-                    if (isset($resultOperacion['error']) && !empty($resultOperacion['error'])) {
-                        echo '<p>Error: ' . $resultOperacion['error'] . '</p>';
-                    } elseif (!empty($resultOperacion)) {
-                        echo '<p>Operación realizada con éxito. Nuevo saldo: ' . $resultOperacion['saldoConvertido'] . ' ' . $resultOperacion['moneda'] . '</p>';
-                    }
-                    ?>
-                    <label for="cantidad">Cantidad:</label>
-                    <input type="number" name="cantidad" required>
-                    <input type="submit" name="accion" value="Añadir">
-                    <input type="submit" name="accion" value="Retirar">
-                </form>
-            </div>
+            <!--Formulario de movimientos-->
+            <?php include_once("movimiento.php") ?>
         </div>
-
+        </div>
     </header>
     <main>
-        <div class="container">
-            <h2>Prestamos</h2>
-                    <!-- Formulario de movimientos -->
-<form action="" method="post">
-    <?php
-    // Mostrar mensajes de error o éxito después de la operación
-    if (isset($errorPrestamo) && !empty($errorPrestamo)) {
-        echo '<p>Error al solicitar préstamo: ' . $errorPrestamo . '</p>';
-    } elseif (isset($exitoPrestamo) && !empty($exitoPrestamo)) {
-        echo '<p>' . $exitoPrestamo . '</p>';
-    }
-    ?>
-    <label for="cantidad">Cantidad:</label>
-    <input type="number" name="cantidad" required>
-    <label for="motivo">Motivo:</label>
-    <input type="text" name="motivo" required>
-    <input type="submit" name="action" value="Solicitar">
-</form>
-
-        </div>
+        <!--Formulario de préstamos-->
+        <?php include_once("prestamo.php") ?>
     </main>
     <footer>
 

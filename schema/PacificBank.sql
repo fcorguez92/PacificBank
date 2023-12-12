@@ -31,6 +31,7 @@ CREATE TABLE Prestamos (
     TasaInteres DECIMAL(5,2) NOT NULL,
     CuotasTotales INT NOT NULL,
     CuotasRestantes INT NOT NULL,
+    Motivo VARCHAR(255),
     FOREIGN KEY (UsuarioID) REFERENCES Usuarios(ID)
 );
 
@@ -64,13 +65,13 @@ VALUES
     (5, 'ES5678901234567890123456', 9000.00);
 
 -- Insertar Préstamos asociados a los Usuarios sin ID
-INSERT INTO Prestamos (UsuarioID, Monto, TasaInteres, CuotasTotales, CuotasRestantes)
+INSERT INTO Prestamos (UsuarioID, Monto, TasaInteres, CuotasTotales, Motivo, CuotasRestantes)
 VALUES
-    (2, 2000.00, 0.05, 12, 12),
-    (3, 5000.00, 0.08, 24, 24),
-    (4, 1000.00, 0.03, 6, 6),
-    (5, 3000.00, 0.06, 18, 18),
-    (2, 1500.00, 0.07, 10, 10);
+    (2, 2000.00, 0.05, 12, 'Motivo1', 12),
+    (3, 5000.00, 0.08, 24, 'Motivo2', 24),
+    (4, 1000.00, 0.03, 6, 'Motivo3', 6),
+    (5, 3000.00, 0.06, 18, 'Motivo4', 18),
+    (2, 1500.00, 0.07, 10, 'Motivo5', 10);
 
 -- Insertar Transacciones entre Usuarios sin ID
 INSERT INTO Transacciones (UsuarioRemitenteID, UsuarioDestinatarioID, Monto, FechaTransaccion)
