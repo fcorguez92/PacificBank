@@ -17,4 +17,5 @@
     <input type="submit" name="action" value="Solicitar">
 </form>
 
+<?php include_once("../../controller/listaPrestamo.php"); ?>
         </div>

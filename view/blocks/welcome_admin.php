@@ -25,11 +25,30 @@
                 <h1>Bienvenido <?php echo $nombreUsuario; ?></h1>
                 <p>Hoy es <?php echo $dateFormatted; ?>.</p>
             </div>
+            <h2>Seleccionar Usuario</h2>
+            <?php include_once("../../controller/controlPanel.php"); ?>
+            <form method="post" action="">
+                <label for="usuario_id">Usuario:</label>
+                <select id="usuario_id" name="usuario_id" required>
+                    <?php
+                    while ($row = $resultUsuarios->fetch_assoc()) {
+                        echo "<option value='{$row['ID']}'>{$row['Username']}</option>";
+                    }
+                    ?>
+                </select>
+                <br>
+                <label for="nuevo_email">Nuevo Email:</label>
+                <input type="text" id="nuevo_email" name="nuevo_email" required>
+                <br>
+                <label for="nueva_moneda">Nueva Moneda:</label>
+                <input type="text" id="nueva_moneda" name="nueva_moneda" required>
+                <br>
+                <input type="submit" value="Actualizar Perfil">
+            </form>
         </div>
 
     </header>
     <main>
-
     </main>
     <footer>
 

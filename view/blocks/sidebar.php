@@ -10,7 +10,7 @@
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="welcome_user.php">
                         <i class="fa fa-globe fa-2x"></i>
                         <span class="nav-text">
                             Posición Global
