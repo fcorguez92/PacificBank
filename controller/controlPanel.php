@@ -9,9 +9,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nuevoEmail = $_POST['nuevo_email'];
     $nuevaMoneda = $_POST['nueva_moneda'];
 
-    // Actualizar datos del usuario
-    $updateSql = "UPDATE Usuarios SET Email = '$nuevoEmail', Moneda = '$nuevaMoneda' WHERE ID = $usuarioID";
-    
+    // Construir la actualización según los campos proporcionados
+    $updateSql = "UPDATE Usuarios SET";
+    if (!empty($nuevoEmail)) {
+        $updateSql .= " Email = '$nuevoEmail',";
+    }
+    if (!empty($nuevaMoneda)) {
+        $updateSql .= " Moneda = '$nuevaMoneda',";
+    }
+
+    // Eliminar la coma final si hay campos actualizados
+    if (substr($updateSql, -1) == ',') {
+        $updateSql = rtrim($updateSql, ',');
+    }
+
+    $updateSql .= " WHERE ID = $usuarioID";
+
     if ($conn->query($updateSql) === TRUE) {
         echo "Perfil actualizado correctamente.";
     } else {

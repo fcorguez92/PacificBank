@@ -38,10 +38,10 @@
                 </select>
                 <br>
                 <label for="nuevo_email">Nuevo Email:</label>
-                <input type="text" id="nuevo_email" name="nuevo_email" required>
+                <input type="text" id="nuevo_email" name="nuevo_email">
                 <br>
                 <label for="nueva_moneda">Nueva Moneda:</label>
-                <input type="text" id="nueva_moneda" name="nueva_moneda" required>
+                <input type="text" id="nueva_moneda" name="nueva_moneda">
                 <br>
                 <input type="submit" value="Actualizar Perfil">
             </form>
