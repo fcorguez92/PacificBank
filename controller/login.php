@@ -12,32 +12,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Incluir el archivo de conexión a la base de datos
         // include_once __DIR__ . "/../model/conexion.php";
         // Consultar la base de datos para encontrar al usuario
-        $sql = "SELECT * FROM Usuarios WHERE Username = '$username' AND Pass = '$password'";
-        $result = $conn->query($sql);
+        $stmt = $conn->prepare("SELECT * FROM Usuarios WHERE Username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            // Inicio de sesión exitoso
+            // Usuario encontrado, verificar la contraseña
             $row = $result->fetch_assoc();
-            $tipoUsuario = $row["UserType"];
-            $usuarioID = $row["id"];
-            $userIban = $row["iban"];
+            $storedPassword = $row["Pass"];
 
-            session_start();
-            $_SESSION["username"] = $username;
-            $_SESSION["tipoUsuario"] = $tipoUsuario;
-            $_SESSION["usuarioID"] = $usuarioID;              
-            $_SESSION["userIban"] = $userIban;          
+            if (password_verify($password, $storedPassword)) {
+                // Contraseña válida, inicio de sesión exitoso
+                $tipoUsuario = $row["UserType"];
+                $usuarioID = $row["id"];
+                $userIban = $row["iban"];
 
-            if ($tipoUsuario == "Administrador") {
-                header("Location: view/blocks/welcome_admin.php");
+                session_start();
+                $_SESSION["username"] = $username;
+                $_SESSION["tipoUsuario"] = $tipoUsuario;
+                $_SESSION["usuarioID"] = $usuarioID;              
+                $_SESSION["userIban"] = $userIban;          
+
+                if ($tipoUsuario == "Administrador") {
+                    header("Location: view/blocks/welcome_admin.php");
+                } else {
+                    header("Location: view/blocks/welcome_user.php");
+                }
+                exit();
             } else {
-                header("Location: view/blocks/welcome_user.php");
+                // Contraseña incorrecta
+                header("location: /PacificBank");
             }
-            exit();
         } else {
-            // Credenciales incorrectas
+            // Usuario no encontrado
             header("location: /PacificBank");
         }
+        $stmt->close();
     }
 }
 ?>

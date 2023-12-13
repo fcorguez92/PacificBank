@@ -1,80 +1,80 @@
 <?php
+include_once("../../model/conexion.php");
 
-// Definir variables para almacenar los mensajes de error
-$username_err = $password_err = $confirm_password_err = $email_err = "";
-$username = $password = $confirm_password = $email = "";
-
-// Procesar datos del formulario cuando se envía el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // Validar el nombre de usuario
-    if (empty(trim($_POST["username"]))) {
-        $username_err = "Por favor, ingrese un nombre de usuario.";
+    // Obtenemos los datos del formulario
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Se recomienda almacenar hashes de contraseñas
+
+    // Verificamos si el usuario ya existe
+    $stmt = $conn->prepare("SELECT ID FROM Usuarios WHERE Username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        echo '<script>alert("El nombre de usuario ya está en uso. Por favor, elige otro."); window.location.href = "/PacificBank/view/blocks/register.php";</script>';
     } else {
-        $username = trim($_POST["username"]);
+        // Insertamos el nuevo usuario en la base de datos
+        $insertStmt = $conn->prepare("INSERT INTO Usuarios (Username, Pass, Email) VALUES (?, ?, ?)");
+        $insertStmt->bind_param("sss", $username, $password, $email);
+
+        if ($insertStmt->execute()) {
+            // Obtener el ID del usuario recién insertado
+            $usuarioID = $insertStmt->insert_id;
+
+            // Generar el IBAN y insertarlo en la tabla Cuentas
+            $iban = generarIBAN($username, $conn);
+            $insertIbanStmt = $conn->prepare("INSERT INTO Cuentas (UsuarioID, IBAN) VALUES (?, ?)");
+            $insertIbanStmt->bind_param("is", $usuarioID, $iban);
+            $insertIbanStmt->execute();
+
+            // Registro exitoso
+            echo '<script>alert("Registro exitoso. Ahora puedes iniciar sesión."); window.location.href = "/PacificBank";</script>';
+        } else {
+            // Error al registrar el usuario
+            echo '<script>alert("Error al registrar el usuario. Por favor, inténtalo de nuevo.");</script>';
+        }
+
+        $insertStmt->close();
+        $insertIbanStmt->close();
     }
 
-    // Validar la contraseña
-    if (empty(trim($_POST["password"]))) {
-        $password_err = "Por favor, ingrese una contraseña.";     
-    } elseif (strlen(trim($_POST["password"])) < 6) {
-        $password_err = "La contraseña debe tener al menos 6 caracteres.";
-    } else {
-        $password = trim($_POST["password"]);
-    }
+    $stmt->close();
+}
 
-    // Validar la confirmación de la contraseña
-    if (empty(trim($_POST["confirmPassword"]))) {
-        $confirm_password_err = "Por favor, confirme la contraseña.";     
-    } else {
-        $confirm_password = trim($_POST["confirmPassword"]);
-        if (empty($password_err) && ($password != $confirm_password)) {
-            $confirm_password_err = "Las contraseñas no coinciden.";
+$conn->close();
+
+// Función para generar el IBAN
+function generarIBAN($username, $conn) {
+    // Convertir las primeras cuatro letras del nombre de usuario a binario y concatenarlas
+    $nombreBinario = substr(base_convert(strtoupper($username), 36, 2), 0, 4);
+
+    // Verificar si el IBAN ya existe en la base de datos
+    $ibanExistente = true;
+    $ibanGenerado = '';
+
+    while ($ibanExistente) {
+        // Concatenar "z" hasta llegar a las 4 letras requeridas
+        $nombreBinario .= str_repeat("z", 4 - strlen($nombreBinario));
+
+        // Agregar "1" o "0" para hacer el IBAN único
+        $ibanGenerado = $nombreBinario . (string)rand(0, 1);
+
+        // Verificar si el IBAN ya existe en la base de datos
+        $stmt = $conn->prepare("SELECT ID FROM Cuentas WHERE IBAN = ?");
+        $stmt->bind_param("s", $ibanGenerado);
+        $stmt->execute();
+        $stmt->store_result();
+
+        if ($stmt->num_rows === 0) {
+            $ibanExistente = false; // IBAN único encontrado
         }
     }
 
-    // Validar el correo electrónico
-    if (empty(trim($_POST["email"]))) {
-        $email_err = "Por favor, ingrese un correo electrónico.";
-    } else {
-        $email = trim($_POST["email"]);
-    }
+    $stmt->close();
 
-    // Verificar si no hay errores antes de insertar en la base de datos
-    if (empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)) {
-
-        // Preparar la declaración de inserción
-        $sql = "INSERT INTO Usuarios (Username, Pass, Email) VALUES (?, ?, ?)";
-        
-        if ($stmt = $conn->prepare($sql)) {
-
-            // Enlazar variables a la declaración preparada como parámetros
-            $stmt->bind_param("sss", $param_username, $param_password, $param_email);
-
-            // Establecer parámetros
-            $param_username = $username;
-            $param_password = password_hash($password, PASSWORD_DEFAULT); // Hashear la contraseña
-            $param_email = $email;
-           
-
-            // Ejecutar la declaración
-            if ($stmt->execute()) {
-                // Redirigir a la página de inicio de sesión después del registro exitoso
-              
-                echo '<script language="javascript">Registro exitoso("juas");</script>';
-                header("location: /pacificbank/index.php");
-            } else {
-                echo "Algo salió mal. Por favor, inténtelo de nuevo más tarde.";
-            }
-            
-            // Cerrar la declaración
-            
-            $stmt->close();
-            // header("location: /PacificBank");
-        }
-    }
-
-    // Cerrar la conexión a la base de datos
-    
+    return $ibanGenerado;
 }
 ?>

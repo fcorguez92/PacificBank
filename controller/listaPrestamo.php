@@ -1,5 +1,5 @@
 <?php
-
+include_once("/xampp/htdocs/PacificBank/model/conexion.php");
 $usuarioID = 1; // ID del usuario logeado (puedes cambiar esto según tu implementación de inicio de sesión)
 
 // Consultar préstamos del usuario

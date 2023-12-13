@@ -1,7 +1,7 @@
 <div class="container">
             <h2>Prestamos</h2>
                     <!-- Formulario de movimientos -->
-<form action="" method="post">
+<form action="../../controller/prestamo.php" method="post">
     <?php
     // Mostrar mensajes de error o éxito después de la operación
     if (isset($errorPrestamo) && !empty($errorPrestamo)) {
