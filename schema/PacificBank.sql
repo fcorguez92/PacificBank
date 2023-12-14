@@ -49,8 +49,8 @@ CREATE TABLE Transacciones (
 -- Insertar Usuarios sin ID y ajustar valores
 INSERT INTO Usuarios (Username, Pass, Email, UserType)
 VALUES
-    ('admin', 'Admin1234','admin@admin.admin' , 'Administrador'),
-	('usuario1', '6985','aa@bb.com' , 'Normal'),
+    ('admin', '$2y$10$oucctiJW5TdB/nzEfxQL7.Jw86kD3k2BeTvLzok2TUq55EDNLiTzC','admin@admin.admin' , 'Administrador'),
+	('usuario1', '$2y$10$KW8L.Mmo1jsQ1aHL.pOypuLtFWILEv.RL1T7WVb8msOx.pbDXZPrO','aa@bb.com' , 'Normal'),
     ('usuario2', 'antinomia','bb@aa.com' , 'Normal'),
     ('usuario3', 'zonya','cc@dd.com' , 'Normal'),
     ('usuario4', 'tlaxalteco','dd@cc.com' , 'Normal');

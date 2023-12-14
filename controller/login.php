@@ -9,8 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($username) || empty($password)) {
         echo "Por favor, completa todos los campos.";
     } else {
-        // Incluir el archivo de conexión a la base de datos
-        // include_once __DIR__ . "/../model/conexion.php";
         // Consultar la base de datos para encontrar al usuario
         $stmt = $conn->prepare("SELECT * FROM Usuarios WHERE Username = ?");
         $stmt->bind_param("s", $username);

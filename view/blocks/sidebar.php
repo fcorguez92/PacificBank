@@ -28,7 +28,7 @@
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="profile.php">
                        <i class="fa fa-camera-retro fa-2x"></i>
                         <span class="nav-text">
                             Mi perfil

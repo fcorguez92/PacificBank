@@ -1,5 +1,5 @@
 <div class="message">
-    <h1>Bienvenido <?php echo $nombreUsuario; ?>,</h1>
+    <h1>Bienvenido/a <?php echo $nombreUsuario; ?>,</h1>
     <p>Hoy es <?php echo $dateFormatted; ?>.</p>
     <?php
     // Verificar si hay errores antes de mostrar el saldo
