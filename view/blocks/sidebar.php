@@ -10,10 +10,10 @@
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="transacciones.php">
+                    <a href="movimientos.php">
                         <i class="fa fa-globe fa-2x"></i>
                         <span class="nav-text">
-                            Transacciones
+                            Movimientos
                         </span>
                     </a>
                     

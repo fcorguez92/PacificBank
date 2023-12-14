@@ -32,9 +32,6 @@ include_once("../../controller/hello.php");
         ?>
         <div class="container">
             <?php include_once("hello.php") ?>
-
-            <!--Formulario de movimientos-->
-            <?php include_once("movimiento.php") ?>
         </div>
         </div>
     </header>
