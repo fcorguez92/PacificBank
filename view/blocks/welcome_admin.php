@@ -1,4 +1,5 @@
-<?php include_once("/xampp/htdocs/PacificBank/model/conexion.php"); ?>
+<?php include_once("/xampp/htdocs/PacificBank/model/conexion.php"); 
+session_start();?>
 <!doctype html>
 <html lang="es">
 

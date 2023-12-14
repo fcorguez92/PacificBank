@@ -1,6 +1,6 @@
 <?php
 
-include_once("/xampp/htdocs/PacificBank/model/conexion.php");
+include_once("../../model/conexion.php");
 
     // Obtener la ruta de la imagen de perfil del usuario
     $sql = "SELECT ImagenPerfil FROM Usuarios WHERE Username = '$username'";
