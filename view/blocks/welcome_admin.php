@@ -1,5 +1,4 @@
-<?php include_once("/xampp/htdocs/PacificBank/model/conexion.php"); 
-session_start();?>
+<?php include_once("/xampp/htdocs/PacificBank/model/conexion.php"); ?>
 <!doctype html>
 <html lang="es">
 
@@ -32,6 +31,10 @@ session_start();?>
                 <label for="usuario_id">Usuario:</label>
                 <select id="usuario_id" name="usuario_id" required>
                     <?php
+                    // Modificar la consulta SQL para obtener solo usuarios normales
+                    $sqlUsuarios = "SELECT ID, Username FROM Usuarios WHERE UserType = 'Normal'";
+                    $resultUsuarios = $conn->query($sqlUsuarios);
+
                     while ($row = $resultUsuarios->fetch_assoc()) {
                         echo "<option value='{$row['ID']}'>{$row['Username']}</option>";
                     }

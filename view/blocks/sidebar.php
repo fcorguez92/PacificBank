@@ -1,7 +1,7 @@
 <div class="area"></div><nav class="main-menu">
             <ul>
                 <li>
-                    <a href="https://jbfarrow.com">
+                    <a href="welcome_user.php">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
                            Página Principal
@@ -10,10 +10,10 @@
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="welcome_user.php">
+                    <a href="transacciones.php">
                         <i class="fa fa-globe fa-2x"></i>
                         <span class="nav-text">
-                            Posición Global
+                            Transacciones
                         </span>
                     </a>
                     
@@ -37,10 +37,10 @@
                    
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="prestamos.php">
                         <i class="fa fa-film fa-2x"></i>
                         <span class="nav-text">
-                            Surveying Tutorials
+                            Gestión de Prestamos
                         </span>
                     </a>
                 </li>

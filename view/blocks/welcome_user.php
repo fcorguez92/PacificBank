@@ -1,6 +1,6 @@
 <?php
 include_once("/xampp/htdocs/PacificBank/model/conexion.php");
-include_once("/xampp/htdocs/PacificBank/controller/prestamo.php");
+// include_once("/xampp/htdocs/PacificBank/controller/prestamo.php");
 include_once("../../controller/saldo.php");
 include_once("../../controller/hello.php");
 ?>
@@ -39,8 +39,7 @@ include_once("../../controller/hello.php");
         </div>
     </header>
     <main>
-        <!--Formulario de préstamos-->
-        <?php include_once("prestamo.php") ?>
+        <div class="container">
         <?php include_once("listaPrestamo.php"); ?>
         </div>
     </main>

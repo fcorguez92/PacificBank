@@ -1,7 +1,6 @@
-<div class="container">
-            <h2>Prestamos</h2>
-                    <!-- Formulario de movimientos -->
-                    <form action="" method="post">
+<h2>Prestamos</h2>
+<!-- Formulario de movimientos -->
+<form action="" method="post">
     <label for="cantidad">Cantidad:</label>
     <input type="number" name="cantidad" required>
     <label for="motivo">Motivo:</label>
@@ -10,5 +9,5 @@
 </form>
 
 <?php
-    include_once("../../controller/prestamo.php");
-    ?>
+include_once("../../controller/prestamo.php");
+?>
