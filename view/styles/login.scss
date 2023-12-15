@@ -1,0 +1,80 @@
+// Variables
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$text-color: #fff;
+$background-color: #ecf0f1;
+$box-shadow-values: 1px 2px 3px #ccc;
+
+// Selectores
+body {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+  background-color: $background-color;
+}
+
+#togglePassword {
+  cursor: pointer;
+  background-color: $primary-color;
+  color: $text-color;
+  border: 1px solid darken($primary-color, 10%);
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    box-shadow: $box-shadow-values;
+  }
+
+  &:active {
+    background-color: darken($primary-color, 20%);
+  }
+}
+
+// Operadores
+$total-width: 300px;
+$box-width: 50px;
+$margin: ($total-width - $box-width) / 2;
+
+#box {
+  width: $box-width;
+  margin: 0 auto;
+}
+
+// Funciones
+@function calculate($value) {
+  @return $value * 2;
+}
+
+#result {
+  width: calculate(10px);
+}
+
+// Mixins
+@mixin gradient-bg($color1, $color2) {
+  background: linear-gradient(to right, $color1, $color2);
+}
+
+#gradient-box {
+  @include gradient-bg($primary-color, $secondary-color);
+}
+
+// Bucles
+@for $i from 1 through 4 {
+  .element-#{$i} {
+    width: $i * 20px;
+  }
+}
+
+// Includes
+%button-style {
+  padding: 10px;
+  border: none;
+}
+
+#special-button {
+  @extend %button-style;
+  background-color: $secondary-color;
+}
+
+#fancy-button {
+  @extend %button-style;
+  font-weight: bold;
+  text-transform: uppercase;
+}
