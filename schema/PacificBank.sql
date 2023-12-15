@@ -10,7 +10,7 @@ CREATE TABLE Usuarios (
     Pass VARCHAR(255) NOT NULL,
     Email VARCHAR(255) NOT NULL,
     UserType ENUM('Normal', 'Administrador') DEFAULT 'Normal',
-    ImagenPerfil VARCHAR(255),
+    ImagenPerfil VARCHAR(255) DEFAULT '../../view/resources/img/placeholder.jpg',
     Moneda VARCHAR(3) DEFAULT 'EUR'
 );
 

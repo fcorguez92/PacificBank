@@ -1,5 +1,5 @@
 <?php
-include_once("/xampp/htdocs/PacificBank/model/conexion.php");
+include_once("../../model/conexion.php");
 // include_once("/xampp/htdocs/PacificBank/controller/prestamo.php");
 include_once("../../controller/saldo.php");
 include_once("../../controller/hello.php");
@@ -33,6 +33,7 @@ include_once("../../controller/hello.php");
         <div class="container">
             <?php include_once("hello.php") ?>
         </div>
+            
         </div>
     </header>
     <main>

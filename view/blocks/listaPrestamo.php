@@ -29,7 +29,8 @@ if (isset($_SESSION['usuarioID'])) {
 }
 
 // Mostrar la tabla HTML
-echo '<table border=1 class="table">
+echo '<h2>Préstamos</h2>
+      <table border=1 class="table">
         <thead>
             <tr>
                 <th>Monto</th>

@@ -24,13 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Contraseña válida, inicio de sesión exitoso
                 $tipoUsuario = $row["UserType"];
                 $usuarioID = $row["ID"];
-             
-                
+                $monedaUsuario = $row["Moneda"];
+
                 session_start();
                 $_SESSION["username"] = $username;
                 $_SESSION["tipoUsuario"] = $tipoUsuario;
-                $_SESSION["usuarioID"] = $usuarioID;              
-                        
+                $_SESSION["usuarioID"] = $usuarioID;
+                $_SESSION["monedaUsuario"] = $monedaUsuario;
 
                 if ($tipoUsuario == "Administrador") {
                     header("Location: view/blocks/welcome_admin.php");

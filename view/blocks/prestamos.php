@@ -1,6 +1,5 @@
 <?php
-include_once("/xampp/htdocs/PacificBank/model/conexion.php");
-// include_once("/xampp/htdocs/PacificBank/controller/prestamo.php");
+include_once("../../model/conexion.php");
 include_once("../../controller/saldo.php");
 include_once("../../controller/hello.php");
 ?>
@@ -19,11 +18,11 @@ include_once("../../controller/hello.php");
 </head>
 
 <body>
-    <?php include_once("sidebar.php"); ?>
-
+    
     <header>
-        <!-- place navbar here -->
+        <?php include_once("sidebar.php"); ?>
     </header>
+
     <main>
         <div class="container">
             <?php include_once("prestamoForm.php"); ?>

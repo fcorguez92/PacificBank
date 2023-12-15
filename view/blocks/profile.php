@@ -1,8 +1,7 @@
 <?php
-include_once("/xampp/htdocs/PacificBank/model/conexion.php");
-include_once("/xampp/htdocs/PacificBank/controller/prestamo.php");
-include_once("../../controller/saldo.php");
+include_once("../../model/conexion.php");
 include_once("../../controller/hello.php");
+include_once("../../controller/saldo.php");
 ?>
 <!doctype html>
 <html lang="es">
@@ -28,19 +27,14 @@ include_once("../../controller/hello.php");
 
         include_once("../../controller/img.php");
 
-        $result = obtenerSaldoConvertido($conn, $nombreUsuario);
         ?>
-        <div class="container">
-            <?php include_once("hello.php") ?>
-
-            <!--Formulario de movimientos-->
-            <?php include_once("movimiento.php") ?>
-        </div>
-        </div>
+       
     </header>
     <main>
-        <!--Formulario de préstamos-->
-        <?php include_once("prestamo.php") ?>
+        <div class="container">
+            <h2>Editar Perfil</h2>
+            <?php include_once("profileForm.php"); ?>
+        </div>
     </main>
     <footer>
 
