@@ -15,6 +15,8 @@ include_once("../../controller/saldo.php");
     <link href="../styles/sidebar.css" rel="stylesheet">
     <link href="../styles/hello.css" rel="stylesheet">
     <link href="../styles/profile_img.css" rel="stylesheet">
+    <link href="../styles/profile.css" rel="stylesheet">
+
 
 </head>
 
@@ -32,7 +34,9 @@ include_once("../../controller/saldo.php");
     </header>
     <main>
         <div class="container">
-            <h2>Editar Perfil</h2>
+            <div class="container mt-4">
+                <h2>Editar Perfil</h2>
+            </div>
             <?php include_once("profileForm.php"); ?>
         </div>
     </main>

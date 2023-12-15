@@ -1,0 +1,87 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+}
+body h2 {
+  color: #5e95cf;
+  margin-bottom: 20px;
+}
+
+.container {
+  margin: 50px auto;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+form h2 {
+  color: #5e95cf;
+  margin-bottom: 20px;
+}
+form label:nth-of-type(1) {
+  color: #4a88c9;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+form input:nth-of-type(1) {
+  border: 1px solid #4a88c9;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+form label:nth-of-type(2) {
+  color: #397bc1;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+form input:nth-of-type(2) {
+  border: 1px solid #397bc1;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+form label:nth-of-type(3) {
+  color: #346fad;
+  font-weight: bold;
+  margin-bottom: 45px;
+}
+form input:nth-of-type(3) {
+  border: 1px solid #346fad;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+form label:nth-of-type(4) {
+  color: #2e6299;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+form input:nth-of-type(4) {
+  border: 1px solid #2e6299;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+form select {
+  border: 1px solid #5e95cf;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+form input[type=submit] {
+  background-color: #5e95cf;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+form input[type=submit]:hover {
+  background-color: #397bc1;
+}
+
+/*# sourceMappingURL=profile.css.map */

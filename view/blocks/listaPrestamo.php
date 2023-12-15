@@ -30,8 +30,7 @@ if (isset($_SESSION['usuarioID'])) {
 }
 
 // Mostrar la tabla HTML
-echo '<h2>Préstamos</h2>
-      <table border=1 class="table">
+echo '<table border=1 class="table">
         <thead>
             <tr>
                 <th>Monto</th>

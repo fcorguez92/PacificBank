@@ -37,6 +37,7 @@ include_once("../../controller/hello.php");
     </header>
     <main>
         <div class="container">
+        <h2>Préstamos pendientes</h2>
         <?php include_once("listaPrestamo.php"); ?>
         </div>
     </main>
