@@ -28,11 +28,10 @@ include_once("../../controller/hello.php");
 
         include_once("../../controller/img.php");
 
-        $result = obtenerSaldoConvertido($conn, $nombreUsuario);
         ?>
         <div class="container">
             <?php include_once("hello.php") ?>
-        </div>
+        
             
         </div>
     </header>

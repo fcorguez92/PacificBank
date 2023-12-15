@@ -7,7 +7,11 @@
     if (isset($resultOperacion['error']) && !empty($resultOperacion['error'])) {
         echo '<p>Error: ' . $resultOperacion['error'] . '</p>';
     } elseif (!empty($resultOperacion)) {
-        echo '<p>Operación realizada con éxito. Nuevo saldo: ' . $resultOperacion['saldoConvertido'] . ' ' . $resultOperacion['moneda'] . '</p>';
+        // Actualizar las variables de sesión después de la operación exitosa
+        $_SESSION['saldoConvertido'] = $resultOperacion['saldoConvertido'];
+        $_SESSION['monedaUsuario'] = $resultOperacion['moneda'];
+
+        // echo '<p>Operación realizada con éxito. Nuevo saldo: ' . $resultOperacion['saldoConvertido'] . ' ' . $resultOperacion['moneda'] . '</p>';
     }
     ?>
     <label for="cantidad">Cantidad:</label>

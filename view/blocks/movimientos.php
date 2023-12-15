@@ -1,6 +1,5 @@
 <?php
 include_once("/xampp/htdocs/PacificBank/model/conexion.php");
-// include_once("/xampp/htdocs/PacificBank/controller/prestamo.php");
 include_once("../../controller/saldo.php");
 include_once("../../controller/hello.php");
 ?>
@@ -8,7 +7,7 @@ include_once("../../controller/hello.php");
 <html lang="en">
 
 <head>
-<title>Prestamos/PacificBank</title>
+<title>Movimientos/PacificBank</title>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,6 +24,11 @@ include_once("../../controller/hello.php");
     </header>
     <main>
         <div class="container">
+            <?php 
+
+            include_once("saldo.php");
+            ?>
+           
             <?php include_once("movimiento.php"); ?>
         </div>
     </main>
