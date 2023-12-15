@@ -131,3 +131,27 @@ height: 100%;
   font-weight: 300;
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
+
+@media (max-width: 768px) {
+  .main-menu {
+    width: 60px; /* Ancho mínimo para la barra de navegación en pantallas pequeñas */
+    position: fixed;
+  }
+
+  .main-menu:hover,
+  nav.main-menu.expanded {
+    width: 60px;
+  }
+
+  .main-menu .nav-text {
+    display: none; /* Ocultar el texto en pantallas pequeñas */
+  }
+
+  .main-menu li {
+    width: 60px; /* Ajustar el ancho de los elementos de menú en pantallas pequeñas */
+  }
+
+  .main-content {
+    margin-left: 60px; /* Mantener el mismo margen del contenido principal */
+  }
+}

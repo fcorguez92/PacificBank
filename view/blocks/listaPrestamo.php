@@ -30,18 +30,19 @@ if (isset($_SESSION['usuarioID'])) {
 }
 
 // Mostrar la tabla HTML
-echo '<table border=1 class="table">
-        <thead>
-            <tr>
-                <th>Monto</th>
-                <th>Tasa de Interés</th>
-                <th>Cuotas Totales</th>
-                <th>Cuotas Pagadas</th>
-                <th>Cuotas Restantes</th>
-                <th>Motivo</th>
-            </tr>
-        </thead>
-        <tbody>';
+echo '<div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Monto</th>
+                    <th>Tasa de Interés</th>
+                    <th>Cuotas Totales</th>
+                    <th>Cuotas Pagadas</th>
+                    <th>Cuotas Restantes</th>
+                    <th>Motivo</th>
+                </tr>
+            </thead>
+            <tbody>';
 
 if ($hayPrestamos) {
     // Mostrar los préstamos si los hay

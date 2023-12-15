@@ -19,15 +19,6 @@
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-comments fa-2x"></i>
-                        <span class="nav-text">
-                            Soporte técnico
-                        </span>
-                    </a>
-                    
-                </li>
-                <li class="has-subnav">
                     <a href="profile.php">
                        <i class="fa fa-camera-retro fa-2x"></i>
                         <span class="nav-text">
@@ -41,38 +32,6 @@
                         <i class="fa fa-film fa-2x"></i>
                         <span class="nav-text">
                             Gestión de Prestamos
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-book fa-2x"></i>
-                        <span class="nav-text">
-                           Surveying Jobs
-                        </span>
-                    </a>
-                </li>
-                <li>
-                   <a href="#">
-                       <i class="fa fa-cogs fa-2x"></i>
-                        <span class="nav-text">
-                            Configuración
-                        </span>
-                    </a>
-                </li>
-                <li>
-                   <a href="#">
-                        <i class="fa fa-map-marker fa-2x"></i>
-                        <span class="nav-text">
-                            Localización
-                        </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                       <i class="fa fa-info fa-2x"></i>
-                        <span class="nav-text">
-                            Acerca de nosotros
                         </span>
                     </a>
                 </li>
