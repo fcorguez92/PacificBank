@@ -19,10 +19,9 @@ include_once("../../controller/hello.php");
 </head>
 
 <body>
-    <?php include_once("sidebar.php"); ?>
-
+    
     <header>
-        <!-- place navbar here -->
+        <?php include_once("sidebar.php"); ?>
     </header>
     <main>
         <div class="container">

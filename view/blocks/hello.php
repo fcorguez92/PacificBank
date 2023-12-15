@@ -9,6 +9,6 @@
         // Mostrar el saldo solo si no hay errores
         $saldoConvertido = $result['saldoConvertido'];
         $moneda = $result['moneda'];
-        echo '<p>Tu saldo actual es de: ' . $saldoConvertido . ' ' . $moneda . '</p>';
+        echo '<p>Tu saldo actual es de: ' . number_format($saldoConvertido, 2) . ' ' . $moneda . '</p>';
     }
     ?>

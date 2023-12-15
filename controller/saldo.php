@@ -1,6 +1,5 @@
 <?php
 
-
 function obtenerSaldoConvertido($conn, $username) {
     $result = array();
 
@@ -34,10 +33,10 @@ function obtenerSaldoConvertido($conn, $username) {
                     $saldoConvertido = $saldoUsuario * 0.9; // 1 euro = 0.9 libras
                     break;
                 case 'JPY':
-                    $saldoConvertido = $saldoUsuario / 160; // 1 euro = 160 yenes
+                    $saldoConvertido = $saldoUsuario * 160; // 1 euro = 160 yenes
                     break;
                 case 'RUB':
-                    $saldoConvertido = $saldoUsuario / 95; // 1 euro = 95 rublos
+                    $saldoConvertido = $saldoUsuario * 0.95; // 1 euro = 95 rublos
                     break;
                 default:
                     $saldoConvertido = $saldoUsuario; // Moneda predeterminada: euros
@@ -45,6 +44,10 @@ function obtenerSaldoConvertido($conn, $username) {
 
             // Redondear el saldo convertido a 2 decimales
             $saldoConvertido = round($saldoConvertido, 2);
+
+            // Actualizar la información en la sesión después de la conversión
+            $_SESSION['saldoConvertido'] = $saldoConvertido;
+            $_SESSION['monedaUsuario'] = $monedaUsuario;
 
         } else {
             // Manejar el caso donde no se pudo obtener el saldo
